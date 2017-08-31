@@ -1,20 +1,46 @@
 {
   "name": "vue-focustrap",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Vue abstract component to help trap focus",
+  "main": "dist/vue-focustrap.common.js",
+  "unpkg": "dist/vue-focustrap.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "spentacular/vue-focustrap"
+  },
+  "bugs": {
+    "url": "spentacular/vue-focustrap/issues"
+  },
+  "homepage": "spentacular/vue-focustrap#readme",
   "scripts": {
-    "build:example": "poi build",
+    "prepublish": "npm run build",
+    "build": "bili --format cjs --format umd --compress --banner --js babel",
     "dev": "poi"
   },
   "keywords": [],
   "author": "Spencer Hamm <spentacular@gmail.com> (https://spencerhamm.com)",
   "license": "MIT",
   "devDependencies": {
-    "poi": "^9.3.3"
+    "bili": "^0.18.1",
+    "poi": "^9.3.3",
+    "rollup-plugin-babel": "^3.0.2"
   },
   "poi": {
     "entry": "example/index.js",
     "dist": "example/dist"
+  },
+  "babel": {
+    "presets": [
+      [
+        "vue-app",
+        {
+          "useBuiltIns": true
+        }
+      ]
+    ]
   }
 }
