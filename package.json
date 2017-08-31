@@ -1,0 +1,20 @@
+{
+  "name": "vue-focustrap",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:example": "poi build",
+    "dev": "poi"
+  },
+  "keywords": [],
+  "author": "Spencer Hamm <spentacular@gmail.com> (https://spencerhamm.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "poi": "^9.3.3"
+  },
+  "poi": {
+    "entry": "example/index.js",
+    "dist": "example/dist"
+  }
+}
