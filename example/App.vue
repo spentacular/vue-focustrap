@@ -15,10 +15,7 @@
     <br /><br /><br />
 
     <button @click="handleClick">toggle</button>
-
-
     <button @click="isActive = false">active off</button>
-
   </div>
 </template>
 
