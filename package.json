@@ -20,18 +20,23 @@
     "prepublish": "npm run build",
     "build": "bili --format cjs --format umd --compress --banner --js babel",
     "dev": "poi",
-    "test": "bundlesize"
+    "test": "jest --config=jest.config.json",
+    "test:size": "bundlesize",
+    "coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "keywords": [],
   "author": "Spencer Hamm <spentacular@gmail.com> (https://spencerhamm.com)",
   "license": "MIT",
   "devDependencies": {
+    "babel-jest": "^20.0.3",
     "bili": "^0.18.1",
     "bundlesize": "0.14.2",
     "coveralls": "^2.13.1",
     "jest": "^20.0.4",
+    "jest-vue-preprocessor": "^1.1.0",
     "poi": "^9.3.3",
-    "rollup-plugin-babel": "^3.0.2"
+    "rollup-plugin-babel": "^3.0.2",
+    "vue-test-utils": "git+https://github.com/vuejs/vue-test-utils.git"
   },
   "poi": {
     "entry": "example/index.js",
@@ -52,5 +57,18 @@
       "path": "./dist/*.js",
       "maxSize": "3 kB"
     }
-  ]
+  ],
+  "jest": {
+    "moduleNameMapper": {
+      "^vue$": "vue/dist/vue.common.js"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/jest-vue-preprocessor"
+    }
+  }
 }

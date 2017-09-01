@@ -1,0 +1,18 @@
+{
+  "name": "vue-focustrap",
+  "collectCoverage": true,
+  "coverageDirectory": "./coverage",
+  "coveragePathIgnorePatterns": [
+    "/node_modules/",
+    "/__tests__/"
+  ],
+  "coverageThreshold": {
+    "global": {
+      "branches": 90,
+      "functions": 90,
+      "lines": 90,
+      "statements": 90
+    }
+  },
+  "verbose": true
+}
