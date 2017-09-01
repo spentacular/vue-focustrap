@@ -20,14 +20,14 @@
     "prepublish": "npm run build",
     "build": "bili --format cjs --format umd --compress --banner --js babel",
     "dev": "poi",
-    "test": "jest --config=jest.config.json",
-    "test:size": "bundlesize",
-    "coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+    "test": "./node_modules/.bin/jest --config=jest.config.json; exit 0",
+    "test:size": "bundlesize"
   },
   "keywords": [],
   "author": "Spencer Hamm <spentacular@gmail.com> (https://spencerhamm.com)",
   "license": "MIT",
   "devDependencies": {
+    "avoriaz": "^4.0.0",
     "babel-jest": "^20.0.3",
     "bili": "^0.18.1",
     "bundlesize": "0.14.2",
@@ -35,8 +35,7 @@
     "jest": "^20.0.4",
     "jest-vue-preprocessor": "^1.1.0",
     "poi": "^9.3.3",
-    "rollup-plugin-babel": "^3.0.2",
-    "vue-test-utils": "git+https://github.com/vuejs/vue-test-utils.git"
+    "rollup-plugin-babel": "^3.0.2"
   },
   "poi": {
     "entry": "example/index.js",

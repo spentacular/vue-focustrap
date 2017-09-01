@@ -1,4 +1,11 @@
+import Vue from 'vue'
 import { FOCUS_ELEMENTS, KEYCODES, checkHidden } from './helpers'
+
+const warn = msg => {
+  if (!Vue.config.silent) {
+    console.warn(msg)
+  }
+}
 
 export default {
   name: 'focustrap',
@@ -149,13 +156,16 @@ export default {
    */
   mounted() {
     this.$nextTick(() => {
-      try {
+      if (this.$slots.default && this.$slots.default.length > 1) {
+        // error if more than one child
+        warn('focustrap can only be used on a single child')
+      } else if (!this.$slots.default || this.$slots.default.length < 1) {
+        // error if no children or less than 1
+        warn('focustrap requires a single child element')
+      } else {
         this.$slots.default[0]
-      } catch (e) {
-        throw new Error('requires a single child component')
+        this.trap()
       }
-
-      this.trap()
     })
   },
 
