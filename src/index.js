@@ -1,7 +1,12 @@
 import focustrap from './focustrap'
 
-focustrap.install = function(Vue) {
+export function install(Vue) {
   Vue.component(focustrap.name, focustrap)
 }
 
 export default focustrap
+
+// Autouse
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(install)
+}
