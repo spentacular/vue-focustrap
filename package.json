@@ -27,7 +27,7 @@
   "license": "MIT",
   "devDependencies": {
     "bili": "^0.18.1",
-    "bundlesize": "^0.14.2",
+    "bundlesize": "0.14.2",
     "coveralls": "^2.13.1",
     "jest": "^20.0.4",
     "poi": "^9.3.3",
